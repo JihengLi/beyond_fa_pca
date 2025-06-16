@@ -9,13 +9,12 @@ export MRTRIX_TMPFILE_DIR=/tmp
 metric_list="fa md ad rd"
 stat_list="mean p50 iqr p95"
 
-find /input -type f -name "*.mha" | while read -r dwi_mha; do
+dwi_mha_files=$(find /input/images/dwi-4d-brain-mri -name "*.mha")
+
+for dwi_mha in $dwi_mha_files; do
+    # Set up file names
+    json_file="/input/dwi-4d-acquisition-metadata.json"
     subj=$(basename "${dwi_mha%.*}")
-    json_file="${dwi_mha%.mha}.json"
-    [[ -f $json_file ]] || {
-        echo "Missing $json_file"
-        exit 1
-    }
 
     bval=/tmp/${subj}.bval
     bvec=/tmp/${subj}.bvec

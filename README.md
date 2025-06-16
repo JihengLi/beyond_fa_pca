@@ -14,7 +14,7 @@ The Docker runs the code from `scripts/entrypoint.sh`.
 
 ## Running the Docker
 
-Your Docker container should be able to read input data from `/input` and write output data to `/output`. Intermediate data should be written to `/tmp`. The input data will be a `.mha` file containing the diffusion MRI data with gradient table information contained in a `.json` file. If the input file is named "sub-cIVs044_ses-s1Bx1_pq_dwmri.mha", then the input folder format should be `/input/sub-cIVs044_ses-s1Bx1_dwi/sub-cIVs044_ses-s1Bx1_dwi.mha`, with gradient table information at `/input/sub-cIVs044_ses-s1Bx1_dwi/sub-cIVs044_ses-s1Bx1_dwi.json`. Your Docker should write a JSON list to the output directory with the name `/output/features-128.json`. **Your JSON list must contain 128 values. You may zero-pad the list if you wish to provide fewer than 128 values.**
+Your Docker container should be able to read input data from `/input` and write output data to `/output`. Intermediate data should be written to `/tmp`. The input data will be a `.mha` file containing the diffusion MRI data with gradient table information contained in a `.json` file. The input file will be in `/input/images/dwi-4d-brain-mri/`, with gradient table information at `/input/dwi-4d-acquisition-metadata.json`. Your Docker should write a JSON list to the output directory with the name `/output/features-128.json`. **Your JSON list must contain 128 values. You may zero-pad the list if you wish to provide fewer than 128 values.**
 
 To run this Docker:
 
