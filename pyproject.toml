@@ -1,0 +1,16 @@
+[project]
+name = "beyond_fa_pca"
+version = "0.0.4"
+description = "Beyond FA challenge."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "scilpy",
+    "joblib",
+    "simpleitk>=2.4.1",
+    "torch>=2.6.0",
+    "tractseg>=2.9",
+]
+
+[tool.uv.sources]
+scilpy = { git = "https://github.com/scilus/scilpy.git" }
