@@ -66,14 +66,13 @@ for dwi_mha in $dwi_mha_files; do
         --output_type tract_segmentation \
         --nr_cpus $OMP_NUM_THREADS
 
-    feature_vector="/output/${subj}_features.json"
     python stats_to_vector.py \
         "$out_dir" \
         "$out_dir/bundle_segmentations" \
         "fa,md,ad,rd" \
         "model/scaler_pca.joblib" \
         "model/pca_model.joblib" \
-        "$feature_vector"
+        "/output/features-128.json"
 
     # stats_csv="/output/${subj}_features.csv"
     # python extract_stats.py \

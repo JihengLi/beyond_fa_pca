@@ -7,7 +7,7 @@
 To build this Docker container, clone the repository and run the following command in the root directory:
 
 ```bash
-DOCKER_BUILDKIT=1 sudo docker build -t beyond_fa_pca:v0.0.4 .
+DOCKER_BUILDKIT=1 sudo docker build -t beyond_fa_pca:v0.0.5 .
 ```
 
 The Docker runs the code from `scripts/entrypoint.sh`.
@@ -36,6 +36,6 @@ sudo docker run \
     --volume $input_dir:/input:ro \
     --volume $output_dir:/output \
     --volume "$DOCKER_NOOP_VOLUME":/tmp \
-    beyond_fa_pca:v0.0.4
+    beyond_fa_pca:v0.0.5
 sudo docker volume rm "$DOCKER_NOOP_VOLUME" > /dev/null
 ```
