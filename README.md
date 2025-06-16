@@ -19,8 +19,8 @@ Your Docker container should be able to read input data from `/input` and write 
 To run this Docker:
 
 ```bash
-input_dir="/home-local/lij112/codes/beyond_fa_challenge/results/Inputs"
-output_dir="/home-local/lij112/codes/beyond_fa_challenge/results/Outputs-pca"
+input_dir=".../Inputs"
+output_dir=".../Outputs"
 
 mkdir -p $output_dir
 sudo chmod 777 $output_dir
