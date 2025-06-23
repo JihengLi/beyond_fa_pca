@@ -45,7 +45,7 @@ for dwi_mha in $dwi_mha_files; do
         "$nifti" "$bval" "$bvec" -f
 
     echo "Estimating FOD & peaks (single-shell)…"
-    dwi2response tournier "$nifti" "$out_dir/response.txt" \
+    dwi2response fa "$nifti" "$out_dir/response.txt" \
         -mask "$out_dir/mask.nii.gz" \
         -fslgrad "$bvec" "$bval" -nthreads $OMP_NUM_THREADS
 
